@@ -1,7 +1,7 @@
 // Inspired from https://www.youtube.com/watch?v=snHKEpCv0Hk
 let degree = 0;
 let n = 8; // Number of circles
-let r = 50;
+let r = 50; // radius
 
 function setup() {
   createCanvas(400, 400);
