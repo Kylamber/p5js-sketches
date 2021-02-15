@@ -5,8 +5,8 @@ let result;
 
 function setup() {
   createCanvas(400, 400);
-  rows_linspc = linspace(-2, 1, width);
-  cols_linspc = linspace(-1, 1, height);
+  rows_linspc = linspace(-2, 2, width);
+  cols_linspc = linspace(-2, 2, height);
   result = createArray(width, height);
   
   for (let i = 0; i < rows_linspc.length; i++) {
