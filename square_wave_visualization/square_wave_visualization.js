@@ -2,9 +2,15 @@
 
 let traces = [];
 let waves = [];
+let circleX;
+let tracerX;
+let center;
 
 function setup() {
   createCanvas(800, 400);
+  circleX = 150;
+  tracerX = 300;
+  center = height/2;
   
   for (let i = 1; i <= 3; i++){
     let n = 2*i-1;
@@ -39,25 +45,25 @@ function draw() {
     
     translate(lastLineX, lastLineY);
     
-    let diameter = dist(150, height/2, lineX + 150, lineY + height/2)*2
-    circle(150, height/2, diameter);
-    line(150, height/2, lineX + 150, lineY+height/2);
+    let diameter = dist(circleX, center, lineX + circleX, lineY + center)*2
+    circle(circleX, center, diameter);
+    line(circleX, center, lineX + circleX, lineY + center);
     
     lastLineX = lineX;
     lastLineY = lineY;
   }
   pop(); // resets the translate
   
-  yTotal += height/2;
+  yTotal += center;
   
-  line(lastCircleX + 150, lastCircleY + height/2, 300, yTotal);
-  circle(300, yTotal, 5); // the circle that's moving up and down
+  line(lastCircleX + circleX, lastCircleY + center, tracerX, yTotal);
+  circle(tracerX, yTotal, 5); // the circle that's moving up and down
   for (let trace of traces) { // draws the circle's path
     trace.x += 5;
     circle(trace.x, trace.y, 2);
   }
   
-  traces.push(new p5.Vector(305, yTotal));
+  traces.push(new p5.Vector(tracerX + 5, yTotal));
   // stores the history of the current 
   
   if (traces[0].x > width) traces.splice(0, 1); 
