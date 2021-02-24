@@ -2,7 +2,7 @@
 I do not know if this is Fourier transform. Inspired from https://www.youtube.com/watch?v=spUNpyF58BY.
 
 ## How it works
-The wave that is to be put in the algorithm would be mapped into a circle by having the x-axis (time) as the angle and amplitude as the radius as described in these lines of code. The rate of which the circle is wrapped around the circle is determined by the `angle` variable. Because `
+The wave that is to be put in the algorithm would be mapped into a circle by having the x-axis (time) as the angle and amplitude as the radius as described in these lines of code. The rate of which the circle is wrapped around the circle is determined by the `angle` variable.
 ```javascript
 let mx = map(x, 0, width, -5, 5);
     
